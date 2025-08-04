@@ -34,7 +34,7 @@ export const FuturEvent = () => {
   }, []);
 
   return (
-    <div className="container mx-auto py-10" id="service">
+    <div className="container mx-auto py-10">
       <h2 className="text-2xl font-bold text-center mb-4">Les événements à venir</h2>
       <p className="text-center text-gray-600 mb-6">Découvrez des événements qui peuvent vous intéresser</p>
       <Carousel
