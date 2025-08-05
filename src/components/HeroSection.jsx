@@ -27,8 +27,7 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Image à droite */}
-        <div className="w-full md:w-1/2 ">
+        <div className="w-full md:w-1/2 py-20 ">
           <img
             src={heroImage}
             alt="Événement RENY"

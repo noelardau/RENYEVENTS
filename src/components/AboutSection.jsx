@@ -50,9 +50,10 @@ export const AboutSection = () => {
           </div>
 
 
-          <div className="flex-1">
+          <div className="flex-1 h-64 md:h-auto">
             <img
               src={AboutImage}
+              height={500}
               alt="Notre Histoire"
               className="w-full rounded-lg shadow-md object-cover"
             />

@@ -1,69 +1,69 @@
-import { useEffect, useRef } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import ViavyJ from "../assets/images/Foire_Viavy_jejo_19à25mars2025.jpg";
+import MalagasyMif from "../assets/images/Foire_Malagasy_mifety.jpg";
 
-import heroImage from  "../assets/images/heroSectionImage.jpg" 
-
+const events = [
+  {
+    id: 1,
+    title: "Foire Viavy Jejo",
+    date: "19-25 Mars 2025",
+    image: ViavyJ,
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "Foire Malagasy Mifety",
+    date: "23-25 Juin 2025",
+    image: MalagasyMif,
+    link: "#",
+  },
+  
+];
 
 export const FuturEvent = () => {
-  const carouselRef = useRef(null);
-  const events = [
-    {
-      title: "Foire de Pâques",
-      date: "17-18 AVR 2025",
-      description: "Dans l'enceinte de la Miroir & Sanifer - Stands disponibles",
-      image: heroImage,
-    },
-    // Add more events as needed
-    {
-      title: "Event 2",
-      date: "25-26 MAY 2025",
-      description: "Another exciting event coming soon!",
-      image: "https://via.placeholder.com/300x400",
-    },
-  ];
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (carousel) {
-      const interval = setInterval(() => {
-        carousel.next();
-      }, 5000); // Auto-scroll every 5 seconds
-      return () => clearInterval(interval);
-    }
-  }, []);
-
   return (
-    <div className="container mx-auto py-10">
-      <h2 className="text-2xl font-bold text-center mb-4">Les événements à venir</h2>
-      <p className="text-center text-gray-600 mb-6">Découvrez des événements qui peuvent vous intéresser</p>
-      <Carousel
-        ref={carouselRef}
-        infiniteLoop
-        autoPlay
-        showThumbs={false}
-        showStatus={false}
-        interval={5000}
-        className="w-full max-w-4xl mx-auto"
-      >
-        {events.map((event, index) => (
-          <div key={index} className="p-4">
-            <div className="card bg-base-100 shadow-xl">
-              <figure>
-                <img src={event.image} alt={event.title} className="w-full h-64 object-cover" />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title text-xl">{event.title}</h3>
-                <p className="text-gray-600">{event.date}</p>
-                <p>{event.description}</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Voir détails</button>
-                </div>
+    <section className="bg-white py-14">
+      <div className="text-center mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold">Les Événements à Venir</h2>
+        <p className="text-sm text-gray-500">
+          Découvrez des évènements qui peuvent vous intéresser
+        </p>
+      </div>
+
+      <div className="w-full max-w-4xl mx-auto">
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          infiniteLoop
+          autoPlay
+          interval={5000}
+          className="rounded-lg shadow-lg"
+        >
+          {events.map((event) => (
+            <div
+              key={event.id}
+              className="flex flex-col items-center min-h-80 pb-8" 
+            >
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain rounded-lg shadow-lg mx-auto"
+              />
+              <h3 className="mt-6 text-xl font-semibold">{event.title}</h3>
+              <p className="text-gray-500">{event.date}</p>
+              <div className="mt-4 flex justify-center w-full">
+                <a
+                  href={event.link}
+                  className="btn btn-outline btn-sm text-sm"
+                >
+                  Voir détails
+                </a>
               </div>
             </div>
-          </div>
-        ))}
-      </Carousel>
-    </div>
+          ))}
+        </Carousel>
+      </div>
+    </section>
   );
 };
