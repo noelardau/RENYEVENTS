@@ -2,7 +2,7 @@ import { FaPhoneAlt, FaFacebook, FaMapMarkerAlt } from "react-icons/fa";
 
 export const ContactSection = () => {
 return (
-    <section className="py-10 px-4 md:px-10 lg:px-20 bg-white" id="contact">
+    <section className="py-10 pt-[88px] px-4 md:px-10 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
         
             <div className="text-center mb-10">
@@ -52,14 +52,14 @@ return (
 
                 <div className="w-full lg:w-2/3">
                     <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg">
-                        <h3 className="font-semibold text-lg mb-4">Demande de Devis Gratuit</h3>
+                        <h3 className="font-semibold text-lg mb-4">Envoyer un mail</h3>
                         <p className="text-sm text-gray-600 mb-4">
                             Décrivez-nous votre projet et nous vous recontacterons rapidement avec une proposition personnalisée.
                         </p>
 
                         <form className="space-y-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input
+                            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
+                                {/* <input
                                     type="text"
                                     placeholder="Votre prénom"
                                     className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
@@ -102,7 +102,7 @@ return (
                             <input
                                 type="date"
                                 className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                            />
+                            /> */}
 
                             <textarea
                                 className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm resize-none"
@@ -114,7 +114,7 @@ return (
                                 type="submit"
                                 className="w-full py-3 rounded-lg bg-red-600 hover:bg-red-700 transition text-white font-semibold shadow-md"
                             >
-                                Envoyer ma demande de devis
+                                Envoyer
                             </button>
                         </form>
                     </div>

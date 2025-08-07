@@ -13,7 +13,7 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section className="py-10 px-4 md:px-10 lg:px-20 bg-white" id="about">
+    <section className="py-10 px-4 pt-[88px] md:px-10 lg:px-20 bg-white" id="about">
       <div className="max-w-7xl mx-auto">
         <span className="text-xs text-red-500 font-semibold uppercase">Notre Histoire</span>
 
@@ -60,6 +60,7 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
+      <div  id="contact"></div>
     </section>
   );
 }

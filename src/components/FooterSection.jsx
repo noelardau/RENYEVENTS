@@ -4,8 +4,7 @@ import { FaPhone, FaFax, FaFacebook, FaMapMarkerAlt } from 'react-icons/fa';
 export const FooterSection = () => {
 return (
     <footer className="footer bg-gray-800 text-white p-10">
-        <div className="grid grid-flow-col gap-4">
-
+        <div className="grid grid-flow-col gap-8">{/* Increased gap from 4 to 8 */}
             <div>
                 <span className="footer-title">RENY Events</span>
                 <p>Organisateur d’événements professionnels, associatifs, culturels, sportifs, corporatifs et tous vos événements divers, conférences et foires.</p>
@@ -39,16 +38,16 @@ return (
             <div>
                 <span className="footer-title">Navigation</span>
                 <div className="space-y-2 mt-4">
-                    <a href="/" className="link link-hover">Accueil</a>
-                    <a href="/services" className="link link-hover">Services</a>
-                    <a href="/a-propos" className="link link-hover">A propos</a>
-                    <a href="/contacts" className="link link-hover">Contacts</a>
+                    <a href="#hero" className="link link-hover px-2">Accueil</a>
+                    <a href="#service" className="link link-hover px-2">Services</a>
+                    <a href="#about" className="link link-hover px-2">A propos</a>
+                    <a href="#contact" className="link link-hover px-2">Contacts</a>
                 </div>
             </div>
         </div>
 
         <div className="w-full flex justify-between mt-8">
-            <span>© 2023 RENY Events. Tous droits réservés.</span>
+            <span>© 2025 RENY Events. Tous droits réservés.</span>
             <span>Organisateur événementiel professionnel.</span>
         </div>
     </footer>

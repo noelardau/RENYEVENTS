@@ -62,7 +62,7 @@ const services = [
 export const ServiceSection = ()=>{
 
     return (
-    <section className="py-10 px-4 md:px-10 lg:px-20 bg-white" id="service">
+    <section className="py-10 px-4 pt-[88px] md:px-10 lg:px-20 bg-white" >
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
           Nos Services d'Organisation Événementielle

@@ -3,7 +3,7 @@ import heroImage from  "../assets/images/heroSectionImage.jpg"
 export const HeroSection = () => {
 
         return (
-    <section className="px-6 py-10 bg-white">
+    <section className="px-6 py-10 bg-white" id="hero">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* Texte à gauche */}
         <div className="text-center md:text-left max-w-xl space-y-6">
@@ -18,12 +18,12 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="btn bg-red-600 text-white hover:bg-red-700 border-none">
+            <a href="#service" className="btn bg-red-600 text-white hover:bg-red-700 border-none">
               Découvrir nos services
-            </button>
-            <button className="btn text-red-500 btn-outline hover:bg-gray-100">
+            </a>
+            <a href="#contact" className="btn text-red-500 btn-outline hover:bg-gray-100">
               Nous contacter
-            </button>
+            </a>
           </div>
         </div>
 

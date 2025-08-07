@@ -64,6 +64,7 @@ export const FuturEvent = () => {
           ))}
         </Carousel>
       </div>
+      <div id="service"></div>
     </section>
   );
 };
