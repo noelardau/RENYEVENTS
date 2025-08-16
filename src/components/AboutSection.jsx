@@ -1,5 +1,5 @@
 import { FaCheckCircle } from "react-icons/fa";
-import AboutImage from "../assets/images/A_propos_image.jpg";
+import about_image from "../assets/images/A_propos_image.jpg";
 
 
 export const AboutSection = () => {
@@ -52,7 +52,7 @@ export const AboutSection = () => {
 
           <div className="flex-1 h-64 md:h-auto">
             <img
-              src={AboutImage}
+              src={about_image}
               height={500}
               alt="Notre Histoire"
               className="w-full rounded-lg shadow-md object-cover"

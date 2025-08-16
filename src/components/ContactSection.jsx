@@ -1,7 +1,9 @@
 import { FaPhoneAlt, FaFacebook, FaMapMarkerAlt } from "react-icons/fa";
 
 export const ContactSection = () => {
+
 return (
+    // I think I should use variable to make these fucking class more clear
     <section className="py-10 pt-[88px] px-4 md:px-10 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
         
@@ -14,7 +16,7 @@ return (
 
             <div className="flex flex-col lg:flex-row gap-10 items-start">
             
-                <div className="w-full lg:w-1/3 space-y-6">
+                <div className="w-full lg:w-1/2 space-y-6">
                     <h3 className="font-semibold text-lg">Restons en contact</h3>
                     <p className="text-sm text-gray-700">
                         Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets événementiels.
@@ -50,7 +52,7 @@ return (
                     </div>
                 </div>
 
-                <div className="w-full lg:w-2/3">
+                <div className="w-full lg:w-1/2">
                     <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg">
                         <h3 className="font-semibold text-lg mb-4">Envoyer un mail</h3>
                         <p className="text-sm text-gray-600 mb-4">
@@ -58,52 +60,6 @@ return (
                         </p>
 
                         <form className="space-y-4">
-                            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
-                                {/* <input
-                                    type="text"
-                                    placeholder="Votre prénom"
-                                    className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                                    required
-                                />
-                                <input
-                                    type="text"
-                                    placeholder="Votre nom"
-                                    className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                                    required
-                                />
-                                <input
-                                    type="email"
-                                    placeholder="Votre@gmail.com"
-                                    className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                                    required
-                                />
-                                <input
-                                    type="tel"
-                                    placeholder="Votre numéro"
-                                    className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                                    required
-                                />
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <select className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm">
-                                    <option disabled selected>Sélectionner un type</option>
-                                    <option>Conférence</option>
-                                    <option>Salon</option>
-                                    <option>Show</option>
-                                </select>
-                                <input
-                                    type="text"
-                                    placeholder="Nombre de participant"
-                                    className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                                />
-                            </div>
-
-                            <input
-                                type="date"
-                                className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm"
-                            /> */}
-
                             <textarea
                                 className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm resize-none"
                                 placeholder="Décrivez-nous votre évènement: objectif, format..."

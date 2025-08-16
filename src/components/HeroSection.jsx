@@ -1,5 +1,5 @@
+import hero_image from  "../assets/images/heroSectionImage.jpg" 
 
-import heroImage from  "../assets/images/heroSectionImage.jpg" 
 export const HeroSection = () => {
 
         return (
@@ -29,7 +29,7 @@ export const HeroSection = () => {
 
         <div className="w-full md:w-1/2 py-20 ">
           <img
-            src={heroImage}
+            src={hero_image}
             alt="Événement RENY"
             className="rounded-xl shadow-md w-full object-cover"
           />

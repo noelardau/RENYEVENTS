@@ -1,10 +1,10 @@
 
-import { FaPhone, FaFax, FaFacebook, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaFacebook, FaMapMarkerAlt } from 'react-icons/fa';
 
 export const FooterSection = () => {
 return (
     <footer className="footer bg-gray-800 text-white p-10">
-        <div className="grid grid-flow-col gap-8">{/* Increased gap from 4 to 8 */}
+        <div className="grid grid-flow-col gap-8">
             <div>
                 <span className="footer-title">RENY Events</span>
                 <p>Organisateur d’événements professionnels, associatifs, culturels, sportifs, corporatifs et tous vos événements divers, conférences et foires.</p>

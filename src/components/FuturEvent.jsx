@@ -1,27 +1,8 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import ViavyJ from "../assets/images/Foire_Viavy_jejo_19à25mars2025.jpg";
-import MalagasyMif from "../assets/images/Foire_Malagasy_mifety.jpg";
 
-const events = [
-  {
-    id: 1,
-    title: "Foire Viavy Jejo",
-    date: "19-25 Mars 2025",
-    image: ViavyJ,
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Foire Malagasy Mifety",
-    date: "23-25 Juin 2025",
-    image: MalagasyMif,
-    link: "#",
-  },
-  
-];
 
-export const FuturEvent = () => {
+export const FuturEvent = ({events}) => {
   return (
     <section className="bg-white py-14">
       <div className="text-center mb-10">
