@@ -37,11 +37,11 @@ return (
 
             <div>
                 <span className="footer-title">Navigation</span>
-                <div className="space-y-2 mt-4">
-                    <a href="#hero" className="link link-hover px-2">Accueil</a>
-                    <a href="#service" className="link link-hover px-2">Services</a>
-                    <a href="#about" className="link link-hover px-2">A propos</a>
-                    <a href="#contact" className="link link-hover px-2">Contacts</a>
+                <div className="space-x-2 mt-4">
+                    <a href="#hero" className="link link-hover ">Accueil</a>
+                    <a href="#service" className="link link-hover ">Services</a>
+                    <a href="#about" className="link link-hover ">A propos</a>
+                    <a href="#contact" className="link link-hover ">Contacts</a>
                 </div>
             </div>
         </div>

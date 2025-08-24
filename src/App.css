@@ -3,6 +3,62 @@
 @plugin "daisyui";
 
 :root {
-  background-color: inherit;
+  background-color: white;
   color: inherit;
+}
+
+/* Header style */
+
+.header-style{
+  @apply bg-white shadow-md px-6 py-2 border-b-4 border-b-gray-300/50 fixed top-0 left-0 w-full z-50;
+}
+
+.header-layout{
+  @apply flex flex-col items-center gap-2 md:flex-row md:items-center md:gap-12 md:h-[88px];
+}
+
+.title-style{
+  @apply text-2xl flex-1 font-bold text-red-600;
+}
+
+.nav-style{
+  @apply menu menu-horizontal gap-2 text-black font-medium;
+}
+
+
+/* Hero section style  */
+
+.hero-padding{
+  @apply px-6 py-10;
+}
+
+.hero-root-layout{
+  @apply max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10;
+}
+
+.hero-left-side-style{
+  @apply text-center md:text-left max-w-xl space-y-6;
+}
+
+.hero-button-layout{
+  @apply flex flex-col sm:flex-row gap-4 justify-center md:justify-start;
+}
+
+.hero-button-service-style{
+  @apply btn bg-red-600 text-white hover:bg-red-700 border-none;
+
+}
+
+.hero-button-contact-style{
+  @apply btn text-red-500 btn-outline hover:bg-gray-100;
+}
+
+/* contact section */
+
+.textarea-event-style{
+  @apply w-full px-4 py-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400 text-sm resize-none;
+}
+
+.button-submit-event-description{
+  @apply w-full py-3 rounded-lg bg-red-600 hover:bg-red-700 transition text-white font-semibold shadow-md;
 }

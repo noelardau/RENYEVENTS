@@ -3,10 +3,10 @@ import hero_image from  "../assets/images/heroSectionImage.jpg"
 export const HeroSection = () => {
 
         return (
-    <section className="px-6 py-10 bg-white" id="hero">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+    <section className="hero-padding" id="hero">
+      <div className="hero-root-layout">
         {/* Texte à gauche */}
-        <div className="text-center md:text-left max-w-xl space-y-6">
+        <div className="hero-left-side-style">
           <h1 className="text-4xl font-bold leading-snug">
             Votre partenaire <br />
             pour des <span className="text-red-600">évènements memorables</span>
@@ -17,11 +17,11 @@ export const HeroSection = () => {
             évènements professionnels avec expertise et créativité. Faites de vos projets des succès inoubliables.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="#service" className="btn bg-red-600 text-white hover:bg-red-700 border-none">
+          <div className="hero-button-layout">
+            <a href="#service" className="hero-button-service-style">
               Découvrir nos services
             </a>
-            <a href="#contact" className="btn text-red-500 btn-outline hover:bg-gray-100">
+            <a href="#contact" className="hero-button-contact-style">
               Nous contacter
             </a>
           </div>
