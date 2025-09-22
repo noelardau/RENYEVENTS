@@ -1,3 +1,5 @@
+import { LangSwitcher } from "./LangSwitcher";
+
 
 export const Header = ({title})=>{
 
@@ -13,7 +15,9 @@ export const Header = ({title})=>{
             <li className="hover:text-red-500"><a href="#about">A propos</a></li>
             <li className="hover:text-red-500"><a href="#contact">Contacts</a></li>
           </ul>
-          <div className="flex-1"></div>
+          <div className="flex-1 flex justify-center">
+                 <LangSwitcher></LangSwitcher>
+          </div>
         </div>
       </header>
     );

@@ -1,15 +1,19 @@
 import hero_image from  "../assets/images/heroSectionImage.jpg" 
-
+import { useTranslation } from 'react-i18next';
 export const HeroSection = () => {
+
+  const { t } = useTranslation();
 
         return (
     <section className="hero-padding" id="hero">
       <div className="hero-root-layout">
         {/* Texte à gauche */}
         <div className="hero-left-side-style">
-          <h1 className="text-4xl font-bold leading-snug">
-            Votre partenaire <br />
-            pour des <span className="text-red-600">évènements memorables</span>
+     
+         <h1 className="text-4xl font-bold leading-snug">
+           {t('hero-section-title')} <br />
+          {t('hero-section-title-1')}<span className="text-red-600">{t('hero-section-title-2')}</span>
+         
           </h1>
 
           <p className="text-gray-700">
