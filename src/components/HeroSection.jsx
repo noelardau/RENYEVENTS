@@ -17,16 +17,16 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-gray-700">
-            RENY Events organise vos séminaires, spectacles, foires, conférences et tous vos
-            évènements professionnels avec expertise et créativité. Faites de vos projets des succès inoubliables.
+            {t("hero-section-text")}
           </p>
 
           <div className="hero-button-layout">
             <a href="#service" className="hero-button-service-style">
-              Découvrir nos services
+              {t("see-services-btn")}
             </a>
             <a href="#contact" className="hero-button-contact-style">
-              Nous contacter
+                            {t("contact-btn")}
+
             </a>
           </div>
         </div>

@@ -1,14 +1,17 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useTranslation } from 'react-i18next';
 
 
 export const FuturEvent = ({events}) => {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-white py-14">
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold">Les Événements à Venir</h2>
+        <h2 className="text-2xl md:text-3xl font-bold">{t("futur-event")}</h2>
         <p className="text-sm text-gray-500">
-          Découvrez des évènements qui peuvent vous intéresser
+          {t("text-futur-event")}
         </p>
       </div>
 

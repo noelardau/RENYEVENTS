@@ -1,7 +1,30 @@
 {
+    
+    
+    "home": "Fandraisana",
+    "about": "Iza izahay ?",
+    "services": "Tolotra",
+    "contacts":"Fifandraisana",
+    
+    
     "hero-section-title": "Namanao",
     "hero-section-title-1": " amin'ny fikarakarana",
-    "hero-section-title-2": " hetsika tsy hay adinoina"
+    "hero-section-title-2": " hetsika tsy hay adinoina",
+    "hero-section-text":"Ny RENY Events dia manomana seminera, seho, foara, fihaonambe, ary hetsika matihanina rehetra miaraka amin'ny fahaizanao sy ny famoronana. Manao fahombiazana tsy hay hadinoina ny tetikasanao.",
+    "see-services-btn":"Ireo tolotray",
+    "contact-btn":"Ifandray aminay",
+
+
+    "futur-event": "Ireo hetsika mbola ho avy",
+    "text-futur-event": "Jerijereo izay hetsika mety ahaliana anao",
+
+    "services-title":"Serivisy fandrindrana hetsika",
+   "services-text":"Manomboka amin'ny famolavolana ka hatramin'ny fahavitana, ny RENY Events dia manohana anao amin'ny tetikasanao hetsika rehetra miaraka amin'ny fahaizana ekena sy fomba fiasa manokana.",
+
+   "first-service-title":"Seminera & Fiofanana",
+   "first-service-one":"Fandaminana fihaonambe, seminera, fiofanana ary atrikasa",
+   "first-service-two": "Efitrano misy fitaovana",
+   "first-service-three":"Fitaovana audiovisuel"
 
 
 

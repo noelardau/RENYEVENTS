@@ -1,71 +1,75 @@
 import { FaMusic, FaHandshake, FaBullhorn, FaChalkboardTeacher, FaBuilding, FaComments } from 'react-icons/fa';
 
-const services = [
-  {
-    icon: <FaChalkboardTeacher className="text-2xl text-red-500" />,
-    title: "Séminaires & formations",
-    items: [
-      "Organisation de conférences, séminaires, formations, ateliers et workshops",
-      "Salle équipée",
-      "Matériel audiovisuel"
-    ],
-  },
-  {
-    icon: <FaMusic className="text-2xl text-red-500" />,
-    title: "Spectacles & Shows",
-    items: [
-      "Soirée d’entreprise",
-      "Concerts",
-      "Coordination artistique"
-    ],
-  },
-  {
-    icon: <FaHandshake className="text-2xl text-red-500" />,
-    title: "Foires & Salons",
-    items: [
-      "Stands personnalisés",
-      "Logistique complète",
-      "Promotion événementielle"
-    ],
-  },
-  {
-    icon: <FaComments className="text-2xl text-red-500" />,
-    title: "Conférences",
-    items: [
-      "Organisation de webinaires, colloques et conférences de presse",
-      "Décoration événementielle",
-      "Matériel audiovisuel"
-    ],
-  },
-  {
-    icon: <FaBuilding className="text-2xl text-red-500" />,
-    title: "Événements Corporate",
-    items: [
-      "Concept global",
-      "Coordination logistique",
-      "Communication intégrée"
-    ],
-  },
-  {
-    icon: <FaBullhorn className="text-2xl text-red-500" />,
-    title: "Relations Publiques",
-    items: [
-      "Plan de communication",
-      "Invitation média",
-      "Gestion de presse"
-    ],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 
 
 export const ServiceSection = ()=>{
+  const { t } = useTranslation();
+  
+  
+  const services = [
+    {
+      icon: <FaChalkboardTeacher className="text-2xl text-red-500" />,
+      title: t("first-service-title"),
+      items: [
+        t("first-service-one"),
+        t("first-service-two"),
+        t("first-service-three")
+      ],
+    },
+    {
+      icon: <FaMusic className="text-2xl text-red-500" />,
+      title: "Spectacles & Shows",
+      items: [
+        "Soirée d’entreprise",
+        "Concerts",
+        "Coordination artistique"
+      ],
+    },
+    {
+      icon: <FaHandshake className="text-2xl text-red-500" />,
+      title: "Foires & Salons",
+      items: [
+        "Stands personnalisés",
+        "Logistique complète",
+        "Promotion événementielle"
+      ],
+    },
+    {
+      icon: <FaComments className="text-2xl text-red-500" />,
+      title: "Conférences",
+      items: [
+        "Organisation de webinaires, colloques et conférences de presse",
+        "Décoration événementielle",
+        "Matériel audiovisuel"
+      ],
+    },
+    {
+      icon: <FaBuilding className="text-2xl text-red-500" />,
+      title: "Événements Corporate",
+      items: [
+        "Concept global",
+        "Coordination logistique",
+        "Communication intégrée"
+      ],
+    },
+    {
+      icon: <FaBullhorn className="text-2xl text-red-500" />,
+      title: "Relations Publiques",
+      items: [
+        "Plan de communication",
+        "Invitation média",
+        "Gestion de presse"
+      ],
+    },
+  ];
 
     return (
     <section className="py-10 px-4 pt-[88px] md:px-10 lg:px-20 bg-white" >
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">
-          Nos Services d'Organisation Événementielle
+          {t("services-title")}
         </h2>
         <p className="text-gray-600 mb-10 text-sm md:text-base max-w-2xl mx-auto">
           De la conception à la réalisation, RENY Events vous accompagne dans tous vos projets événementiels avec un savoir-faire reconnu et une approche personnalisée.
@@ -90,6 +94,7 @@ export const ServiceSection = ()=>{
           ))}
         </div>
       </div>
+      <div id="about"></div>
     </section>
   );
 
