@@ -7,7 +7,7 @@ export const FuturEvent = ({events}) => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white md:py-14 py:22" >
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-bold">{t("futur-event")}</h2>
         <p className="text-sm text-gray-500">

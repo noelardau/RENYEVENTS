@@ -5,7 +5,7 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
         return (
-    <section className="hero-padding" id="hero">
+    <section className="hero-padding mt-[150px] md:pt-[88px] " id="hero">
       <div className="hero-root-layout">
         {/* Texte à gauche */}
         <div className="hero-left-side-style">
@@ -24,7 +24,7 @@ export const HeroSection = () => {
             <a href="#service" className="hero-button-service-style">
               {t("see-services-btn")}
             </a>
-            <a href="#contact" className="hero-button-contact-style">
+            <a href="#contact" className="hero-button-contact-style" >
                             {t("contact-btn")}
 
             </a>
@@ -35,7 +35,7 @@ export const HeroSection = () => {
           <img
             src={hero_image}
             alt="Événement RENY"
-            className="rounded-xl shadow-md w-full object-cover"
+            className="rounded-xl shadow-md w-full object-cover" 
           />
         </div>
       </div>

@@ -6,7 +6,7 @@ export const Header = ({title})=>{
   const { t } = useTranslation();
 
     return (
-      <header className="header-style">        
+      <header className="header-style" >        
         <div className="header-layout">
           <div className="title-style">
             {title}

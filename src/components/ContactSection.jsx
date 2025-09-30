@@ -7,7 +7,7 @@ export const ContactSection = () => {
 
 return (
     // I think I should use variable to make these fucking class more clear
-    <section className="py-10 pt-[60px] px-4 md:px-10 lg:px-20 bg-white">
+    <section className="py-10 pt-[88px] px-4 md:px-10 lg:px-20 bg-white">
         <div className="max-w-7xl mx-auto">
         
             <div className="text-center mb-10">
