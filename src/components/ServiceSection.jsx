@@ -20,47 +20,47 @@ export const ServiceSection = ()=>{
     },
     {
       icon: <FaMusic className="text-2xl text-red-500" />,
-      title: "Spectacles & Shows",
+      title: t("second-service-title"),
       items: [
-        "Soirée d’entreprise",
-        "Concerts",
-        "Coordination artistique"
+          t("second-service-one"),
+        t("second-service-two"),
+        t("second-service-three")
       ],
     },
     {
       icon: <FaHandshake className="text-2xl text-red-500" />,
-      title: "Foires & Salons",
+      title: t("third-service-title"),
       items: [
-        "Stands personnalisés",
-        "Logistique complète",
-        "Promotion événementielle"
+          t("third-service-one"),
+        t("third-service-two"),
+        t("third-service-three")
       ],
     },
     {
       icon: <FaComments className="text-2xl text-red-500" />,
-      title: "Conférences",
+      title: t("forth-service-title"),
       items: [
-        "Organisation de webinaires, colloques et conférences de presse",
-        "Décoration événementielle",
-        "Matériel audiovisuel"
+          t("forth-service-one"),
+        t("forth-service-two"),
+        t("forth-service-three")
       ],
     },
     {
       icon: <FaBuilding className="text-2xl text-red-500" />,
-      title: "Événements Corporate",
+      title: t("fifth-service-title"),
       items: [
-        "Concept global",
-        "Coordination logistique",
-        "Communication intégrée"
+          t("fifth-service-one"),
+        t("fifth-service-two"),
+        t("fifth-service-three")
       ],
     },
     {
       icon: <FaBullhorn className="text-2xl text-red-500" />,
-      title: "Relations Publiques",
+      title: t("sixth-service-title"),
       items: [
-        "Plan de communication",
-        "Invitation média",
-        "Gestion de presse"
+          t("sixth-service-one"),
+        t("sixth-service-two"),
+        t("sixth-service-three")
       ],
     },
   ];
@@ -72,7 +72,7 @@ export const ServiceSection = ()=>{
           {t("services-title")}
         </h2>
         <p className="text-gray-600 mb-10 text-sm md:text-base max-w-2xl mx-auto">
-          De la conception à la réalisation, RENY Events vous accompagne dans tous vos projets événementiels avec un savoir-faire reconnu et une approche personnalisée.
+          {t("services-text")}
         </p>
 
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,5 +1,6 @@
 {
-    "home": "Acceuil",
+  
+  "home": "Acceuil",
     "about": "A propos",
     "services": "Services",
     "contacts":"Contacts",
@@ -22,7 +23,51 @@
    "first-service-title":"Séminaires & formations",
    "first-service-one":"Organisation de conférences, séminaires, formations, ateliers et workshops",
    "first-service-two": "Salle équipées",
-   "first-service-three": "Matériel audiovisuel"
+   "first-service-three": "Matériel audiovisuel",
+
+   "second-service-title": "Spectacles & Shows",
+   "second-service-one":"Soirée d'entreprise",
+   "second-service-two": "Concerts",
+   "second-service-three": "Coordination artistique",
+
+   "third-service-title":"Foires & Salons",
+    "third-service-one":"Stands personnalisés",
+    "third-service-two":"Logistique complète",
+    "third-service-three":"Promotion événementielle",
+
+    "forth-service-title":"Conférences",
+
+   "forth-service-one": "Organisation de webinaires, colloques et conférences de presse",
+    "forth-service-two":"Décoration événementielle",
+    "forth-service-three":"Matériel audiovisuel",
+
+
+
+    "fifth-service-title":"Événements Corporate",
+    "fifth-service-one": "Concept global",
+    "fifth-service-two":"Coordination logistique",
+    "fitth-service-three":"Communication intégrée",
+
+
+    "sixth-service-title":"Relations Publiques",
+
+    "sixth-service-one":"Plan de communication",
+    "sixth-service-two":"Invitation média",
+    "sixth-service-three":"Gestion de presse",
+
+    "contact-section-title": "Contactez RENY Events",
+    "contact-section-text":"Vous avez un projet d'événement ? Contactez-nous dès maintenant pour discuter de vos besoins et obtenir un devis personnalisé.",
+    "contact-section-left-side-title": "Restons en contact",
+    "contact-section-left-side-text": "Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans la réalisation de vos projets événementiels.",
+     "Suivez nos actualités": "Suivez nos actualités",
+    "Adresse":"Adresse",
+
+    "Envoyer un mail": "Envoyer un mail",
+     "contact-section-right-side-text": "Décrivez-nous votre projet et nous vous recontacterons rapidement avec une proposition personnalisée.",
+     "Envoyer":"Envoyer",
+     "contact-section-placeholder": "Décrivez-nous votre évènement: objectif, format..."
+    
+
 
 
 
