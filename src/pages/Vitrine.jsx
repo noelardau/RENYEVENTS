@@ -21,7 +21,7 @@ export const Vitrine = ()=>{
         
         <Header title={"RENY Events"}/>
         
-        <div className="pt-[88px] scroll-smooth">
+        <div className="pt-[150px] md:pt-[88px] scroll-smooth">
           <HeroSection/>
           <FuturEvent events={list_of_event}/>
           <ServiceSection/>

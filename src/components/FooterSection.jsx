@@ -1,13 +1,17 @@
 
 import { FaPhone, FaFacebook, FaMapMarkerAlt } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+
 
 export const FooterSection = () => {
+  const { t } = useTranslation();
+
 return (
     <footer className="footer bg-gray-800 text-white p-10">
         <div className="grid grid-flow-col gap-8">
             <div>
                 <span className="footer-title">RENY Events</span>
-                <p>Organisateur d’événements professionnels, associatifs, culturels, sportifs, corporatifs et tous vos événements divers, conférences et foires.</p>
+                <p>{t("footer-left-text")}</p>
                 <div className="flex items-start mt-2">
                     <FaPhone className="text-red-600 mr-2 mt-1" />
                     <div className="flex flex-col">
@@ -28,10 +32,10 @@ return (
             <div>
                 <span className="footer-title">Nos services</span>
                 <div className="space-y-2 mt-4">
-                    <p>Séminaires et formations</p>
-                    <p>Spéctacles & shows</p>
-                    <p>Conférences</p>
-                    <p>Foires</p>
+                    <p>{t("first-service-title")}</p>
+                    <p>{t("second-service-title")}</p>
+                    <p>{t("forth-service-title")} </p>
+                    <p>{t("third-service-title")}</p>
                 </div>
             </div>
 
