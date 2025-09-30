@@ -42,10 +42,10 @@ return (
             <div>
                 <span className="footer-title">Navigation</span>
                 <div className="space-x-2 mt-4">
-                    <a href="#hero" className="link link-hover ">Accueil</a>
-                    <a href="#service" className="link link-hover ">Services</a>
-                    <a href="#about" className="link link-hover ">A propos</a>
-                    <a href="#contact" className="link link-hover ">Contacts</a>
+                    <a href="#hero" className="link link-hover ">{t("home")}</a>
+                    <a href="#service" className="link link-hover ">{t("services")}</a>
+                    <a href="#about" className="link link-hover ">{t("about")}</a>
+                    <a href="#contact" className="link link-hover ">{t("contacts")}</a>
                 </div>
             </div>
         </div>
