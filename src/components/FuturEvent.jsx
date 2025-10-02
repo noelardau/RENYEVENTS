@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 
 export const FuturEvent = ({events}) => {
+  
   const { t } = useTranslation();
 
   return (

@@ -1,5 +1,6 @@
 import hero_image from  "../assets/images/heroSectionImage.jpg" 
 import { useTranslation } from 'react-i18next';
+
 export const HeroSection = () => {
 
   const { t } = useTranslation();

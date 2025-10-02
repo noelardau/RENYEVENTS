@@ -13,6 +13,11 @@ export const LangSwitcher = () => {
     }
   };
 
+  const language = {
+    MG: "mg",
+    FR: "fr"
+  }
+
   // Récupérer le code de la langue actuelle (ex: 'MG' ou 'FR')
   const currentLangCode = i18n.language.toUpperCase();
 
@@ -28,7 +33,7 @@ export const LangSwitcher = () => {
       >
         <li>
           <button
-            onClick={() => changeLanguage('mg')}
+            onClick={() => changeLanguage(language.MG)}
             className="flex items-center gap-2 justify-between hover:bg-gray-100 transition-opacity duration-200"
           >
             <span className="fi fi-mg flex-shrink-0"></span>
@@ -37,7 +42,7 @@ export const LangSwitcher = () => {
         </li>
         <li>
           <button
-            onClick={() => changeLanguage('fr')}
+            onClick={() => changeLanguage(language.FR)}
             className="flex items-center gap-2 justify-between hover:bg-gray-100 transition-opacity duration-200"
           >
             <span className="fi fi-fr flex-shrink-0"></span>
