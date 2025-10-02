@@ -7,7 +7,7 @@ export const FuturEvent = ({events}) => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-white md:py-14 py:22" >
+    <section className="bg-white md:py-14 py:22 z-0" >
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-bold">{t("futur-event")}</h2>
         <p className="text-sm text-gray-500">
@@ -22,7 +22,7 @@ export const FuturEvent = ({events}) => {
           infiniteLoop
           autoPlay
           interval={5000}
-          className="rounded-lg shadow-lg"
+          className="rounded-lg shadow-lg z-0"
         >
           {events.map((event) => (
             <div

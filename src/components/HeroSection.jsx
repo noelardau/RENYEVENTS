@@ -5,7 +5,7 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
         return (
-    <section className="hero-padding mt-[90px] md:pt-[88px] " id="hero">
+    <section className="hero-padding mt-[90px] md:pt-[88px] w-full" id="hero">
       <div className="hero-root-layout">
         {/* Texte à gauche */}
         <div className="hero-left-side-style">

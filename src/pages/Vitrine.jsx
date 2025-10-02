@@ -17,7 +17,7 @@ export const Vitrine = ()=>{
 
   
     return (
-      <>
+      <div className="w-full overflow-x-hidden">
         
         <Header title={"RENY Events"}/>
         
@@ -30,6 +30,6 @@ export const Vitrine = ()=>{
           <FooterSection/>
         </div>
 
-      </>
+      </div>
     );
 }

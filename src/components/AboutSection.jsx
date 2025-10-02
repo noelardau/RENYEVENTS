@@ -9,7 +9,7 @@ import produit4 from "../assets/images/produit_tsaky.jpg"
 export const AboutSection = () => {
   
   return (
-    <div className="container mx-auto bg-white md:pt-[88px] pt-[120px] px-4 md:px-10 lg:px-20">
+    <div className="container w-full mx-auto bg-white md:pt-[88px] pt-[120px] px-4 md:px-10 lg:px-20">
       <div className="grid grid-cols-3 gap-4" style={{ gridTemplateRows: 'repeat(6, minmax(100px, auto))' }}>
         {/* Row 1 */}
         <div className="col-span-3  text-left py-2">

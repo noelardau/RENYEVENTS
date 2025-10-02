@@ -8,7 +8,7 @@ export const Header = ({ title }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full shadow-md bg-white fixed top-0 left-0 right-0">
+    <header className="w-full shadow-md bg-white fixed top-0 left-0 right-0 z-20">
       <div className="flex items-center justify-between p-4">
         {/* Titre toujours à gauche */}
         <div className="text-xl font-bold text-red-600">{title}</div>
