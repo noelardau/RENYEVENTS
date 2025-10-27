@@ -1,9 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const LangSwitcher = () => {
   const { i18n } = useTranslation();
   const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    i18n.changeLanguage(language.MG);
+
+  }, []);
+
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
