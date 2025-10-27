@@ -9,7 +9,7 @@ export const BackOffice = ()=>{
     return (
       <div className="w-full overflow-x-hidden">
         
-        <HeaderBack onLogout={null}/>
+        <HeaderBack />
 
         <Outlet></Outlet>
         

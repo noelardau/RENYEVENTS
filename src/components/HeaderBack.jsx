@@ -1,11 +1,18 @@
 import { FaSignOutAlt } from 'react-icons/fa';
-import { adminState } from '../exemple_data/adminState';
+import { useUserStore } from '../store/userStore';
+import {useNavigate} from 'react-router-dom';
 
 
-export const HeaderBack = ({  onLogout }) => {
+export const HeaderBack = () => {
  
+
+  let {isConnected, setIsConnected} = useUserStore()
+  let navigateTo = useNavigate()
+
   let logout =  () => {
-      onLogout()
+      setIsConnected(false)
+      navigateTo("/admin")
+
   }
 
   return (
@@ -18,7 +25,7 @@ export const HeaderBack = ({  onLogout }) => {
         </div>
         
         {
-          adminState.isConnected ? 
+          isConnected ? 
           <div className="text-xl font-bold text-red-600" onClick={logout}> <FaSignOutAlt></FaSignOutAlt> </div>
             : ""
       

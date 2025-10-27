@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
-import { HeaderBack } from "../components/HeaderBack";
+import { useEffect } from "react";
 import { LoginForm } from "../components/LoginForm";
-import { adminState } from "../exemple_data/adminState";
 import { EventManagement } from "./GestionEvent";
+
+import { useUserStore } from '../store/userStore';
 
 
 export const HomeBO = ()=>{
+
+
+  let {isConnected, setIsConnected} = useUserStore()
+
 
   useEffect(() => {
    
@@ -25,8 +29,7 @@ export const HomeBO = ()=>{
     } 
     
     
-    let [isConnected, setIsConnected] = useState(adminState.isConnected)
-
+    
     return (
           isConnected ?
           
