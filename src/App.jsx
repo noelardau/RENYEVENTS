@@ -1,11 +1,14 @@
 import { createBrowserRouter, RouterProvider} from "react-router-dom"; 
 import { Vitrine } from './pages/Vitrine'
+import {BackOffice} from './pages/BackOffice'
+import { HomeBO } from "./pages/HomeBO";
+import { NewEventForm } from "./pages/NewEvent";
 import './App.css'
 
 
 const app_path = {
     home: "/",
-    test: "/test"
+    back: "/admin",
 }
 
 
@@ -15,8 +18,18 @@ const app_router = createBrowserRouter([
         element: <Vitrine/> 
     },
     {
-        path: app_path.test,
-        element: <div><h1>Ceci est un test</h1></div>
+        path: app_path.back,
+        element: <BackOffice/>,
+        children: [
+         {
+          path: "",
+          element: <HomeBO/>
+         },
+         {
+          path: "createEvent",
+          element: <NewEventForm/>
+         } 
+        ]
     }
 
 ])
