@@ -1,6 +1,7 @@
 
 import { FaPhone, FaFacebook, FaMapMarkerAlt } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 
 export const FooterSection = () => {
@@ -46,6 +47,7 @@ return (
                     <a href="#service" className="link link-hover ">{t("services")}</a>
                     <a href="#about" className="link link-hover ">{t("about")}</a>
                     <a href="#contact" className="link link-hover ">{t("contacts")}</a>
+                    <Link to={"/admin"} className="link link-hover ">back office</Link>
                 </div>
             </div>
         </div>
