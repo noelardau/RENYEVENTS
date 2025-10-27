@@ -6,7 +6,7 @@ export const LangSwitcher = () => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    i18n.changeLanguage(language.MG);
+    i18n.changeLanguage("mg");
 
   }, []);
 

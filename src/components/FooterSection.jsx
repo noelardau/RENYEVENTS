@@ -9,7 +9,7 @@ export const FooterSection = () => {
 
 return (
     <footer className="footer bg-gray-800 text-white p-10">
-        <div className="grid grid-flow-col gap-8">
+        <div className="flex justify-between w-full flex-col md:flex-row gap-8">
             <div>
                 <span className="footer-title">RENY Events</span>
                 <p>{t("footer-left-text")}</p>
