@@ -42,7 +42,7 @@ return (
 
             <div>
                 <span className="footer-title">Navigation</span>
-                <div className="space-x-2 mt-4">
+                <div className="space-x-2 mt-4 flex flex-col">
                     <a href="#hero" className="link link-hover ">{t("home")}</a>
                     <a href="#service" className="link link-hover ">{t("services")}</a>
                     <a href="#about" className="link link-hover ">{t("about")}</a>
