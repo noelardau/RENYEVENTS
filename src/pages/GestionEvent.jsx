@@ -82,8 +82,8 @@ export const EventManagement = () => {
         eventTitle={deleteModal.eventTitle}
       />
 
-      <div className="flex justify-between items-center mb-6">
-        <div>
+      <div className="flex flex-col items-center justify-center md:justify-between md:flex-row items-center mb-6">
+        <div align="center">
           <h2 className="text-xl font-semibold text-gray-700">Gestion des événements</h2>
           <p className="text-gray-500">Créez et gérez vos événements à venir</p>
         </div>
