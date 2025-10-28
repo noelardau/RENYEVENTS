@@ -246,9 +246,9 @@ return (
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-4">
-                    <button type="button" className="btn btn-ghost w-full md:w-auto">
-                        <Link to="/admin">Annuler</Link>
-                    </button>
+                    <Link to="/admin"><button type="button" className="btn btn-ghost w-full md:w-auto">
+                        Annuler
+                    </button></Link>
                     <button type="submit" className="btn bg-red-600 text-white w-full md:w-auto">Créer événement</button>
                 </div>
             </form>
