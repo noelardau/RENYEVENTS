@@ -98,40 +98,42 @@ export const EventManagement = () => {
           <p className="text-sm">Créez votre premier événement pour commencer</p>
         </div>
             ) : (
-                <table className="w-full table-auto">
-                <thead>
-                  <tr className="bg-gray-100">
-                    <th className="px-4 py-2 text-left text-gray-600">Titre</th>
-                    <th className="px-4 py-2 text-left text-gray-600">Date</th>
-                    <th className="px-4 py-2 text-left text-gray-600">Lieu</th>
-                    <th className="px-4 py-2 text-left text-gray-600">Description</th>
-                    <th className="px-4 py-2 text-left text-gray-600">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {events.map((event) => (
-                    <tr key={event.titre} className="border-b"> 
+              <div className="overflow-x-auto -mx-6 px-6">
+                <table className="min-w-full divide-y table-auto">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="px-4 py-2 text-left text-gray-600">Titre</th>
+                      <th className="px-4 py-2 text-left text-gray-600">Date</th>
+                      <th className="px-4 py-2 text-left text-gray-600">Lieu</th>
+                      <th className="px-4 py-2 text-left text-gray-600 hidden md:table-cell">Description</th>
+                      <th className="px-4 py-2 text-left text-gray-600">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {events.map((event) => (
+                      <tr key={event.id} className="border-b"> 
                         <td className="px-4 py-2">{event.titre}</td>
                         <td className="px-4 py-2">{event.date_debut}</td>
                         <td className="px-4 py-2">{event.lieu}</td>
-                        <td className="px-4 py-2">{event.image}</td>
+                        <td className="px-4 py-2 hidden md:table-cell">{event.image}</td>
                         <td className="px-4 py-2">
-                           
-                           <Link to={"editEvent/"+event.id}>
-                              <button className="btn btn-sm bg-blue-600 text-white mr-2">Éditer</button>
-                           </Link> 
-                            
+                          <div className="flex items-center gap-2">
+                            <Link to={`editEvent/${event.id}`}>
+                              <button className="btn btn-sm bg-blue-600 text-white">Éditer</button>
+                            </Link>
                             <button 
                               onClick={() => handleDeleteClick(event)}
                               className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
                             >
                               Supprimer
                             </button>
+                          </div>
                         </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )         
         }
       </div>
