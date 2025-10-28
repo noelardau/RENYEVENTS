@@ -1,6 +1,7 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { useEventStore } from "../store/eventStore"; 
 
 export const NewEventForm = ({
   titre = "",
@@ -11,7 +12,6 @@ export const NewEventForm = ({
   lieu = "",
   tarifs = "",
   image = "",
-  onSubmit,
 }) => {
   const [form, setForm] = useState({
     titre,
@@ -25,6 +25,8 @@ export const NewEventForm = ({
   });
 
   const [imagePreview, setImagePreview] = useState(image || "");
+
+  const {addEvent} = useEventStore();
 
   useEffect(() => {
     setForm({ titre, date_debut, date_fin, heure, type_evenement, lieu, tarifs, image });
@@ -45,9 +47,20 @@ export const NewEventForm = ({
     }
   };
 
+  let navigate = useNavigate();
+
   const submit = (e) => {
     e.preventDefault();
-    console.log("Submitting form:", form);
+    console.log("Submitting form:", typeof form);
+    const ob = {...form}
+
+    ob.image = form.image.name
+    ob.id = Math.floor(Math.random() * 1000000);
+
+    console.log(ob)
+
+    addEvent(ob)
+    navigate("/admin");
     // if (onSubmit) onSubmit(form);
     // else console.log("NewEventForm submit:", form);
   };
@@ -57,7 +70,8 @@ const fileInputRef = React.useRef(null);
 const setImageFile = (file) => {
     // revoke previous blob url to avoid memory leak
     if (imagePreview && imagePreview.startsWith && imagePreview.startsWith("blob:")) {
-        try { URL.revokeObjectURL(imagePreview); } catch (e) {}
+        // eslint-disable-next-line no-useless-catch
+        try { URL.revokeObjectURL(imagePreview); } catch (e) { throw e;}
     }
     if (file) {
         const url = URL.createObjectURL(file);

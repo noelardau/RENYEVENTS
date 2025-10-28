@@ -4,6 +4,7 @@ import {BackOffice} from './pages/BackOffice'
 import { HomeBO } from "./pages/HomeBO";
 import { NewEventForm } from "./pages/NewEvent";
 import './App.css'
+import { EditEvent } from "./pages/EditEvent";
 
 
 const app_path = {
@@ -28,7 +29,11 @@ const app_router = createBrowserRouter([
          {
           path: "createEvent",
           element: <NewEventForm/>
-         } 
+         } ,
+         {
+          path:"editEvent/:eventId",
+          element: <EditEvent/>
+         }
         ]
     }
 

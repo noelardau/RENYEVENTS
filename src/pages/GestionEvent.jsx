@@ -3,6 +3,8 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { useEventStore } from "../store/eventStore";
+
 const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, eventTitle }) => {
   if (!isOpen) return null;
 
@@ -33,10 +35,9 @@ const DeleteConfirmModal = ({ isOpen, onClose, onConfirm, eventTitle }) => {
 };
 
 export const EventManagement = () => {
-    const [events, setEvents] = useState([
-        {id:1, title:"Event 1", date:"2024-07-01", location:"Location 1", description:"Description 1"},
-        {id:2, title:"Event 2", date:"2024-07-07", location:"Location 1", description:"Description 1"},
-    ]);
+  
+
+    const {events, removeEventById} = useEventStore();
     
     const [deleteModal, setDeleteModal] = useState({ show: false, eventId: null, eventTitle: "" });
 
@@ -48,7 +49,8 @@ export const EventManagement = () => {
       try {
         // Simuler une suppression avec un délai pour montrer le toast
         setTimeout(() => {
-          setEvents(events.filter(e => e.id !== deleteModal.eventId));
+
+          removeEventById(deleteModal.eventId);
           toast.success("Événement supprimé avec succès !");
           setDeleteModal({ show: false, eventId: null, eventTitle: "" });
         }, 500);
@@ -108,13 +110,17 @@ export const EventManagement = () => {
                 </thead>
                 <tbody>
                   {events.map((event) => (
-                    <tr key={event.id} className="border-b"> 
-                        <td className="px-4 py-2">{event.title}</td>
-                        <td className="px-4 py-2">{event.date}</td>
-                        <td className="px-4 py-2">{event.location}</td>
-                        <td className="px-4 py-2">{event.description}</td>
+                    <tr key={event.titre} className="border-b"> 
+                        <td className="px-4 py-2">{event.titre}</td>
+                        <td className="px-4 py-2">{event.date_debut}</td>
+                        <td className="px-4 py-2">{event.lieu}</td>
+                        <td className="px-4 py-2">{event.image}</td>
                         <td className="px-4 py-2">
-                            <button className="btn btn-sm bg-blue-600 text-white mr-2">Éditer</button>
+                           
+                           <Link to={"editEvent/"+event.id}>
+                              <button className="btn btn-sm bg-blue-600 text-white mr-2">Éditer</button>
+                           </Link> 
+                            
                             <button 
                               onClick={() => handleDeleteClick(event)}
                               className="btn btn-sm bg-red-600 text-white hover:bg-red-700"
