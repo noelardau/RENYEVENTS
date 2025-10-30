@@ -1,272 +1,173 @@
 
-import { Link, useNavigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import { useEventStore } from "../store/eventStore"; 
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { LieuInput } from '../components/LieuInput';
+import { TarifInput } from '../components/TarifInput';
+import { FileUpload } from '../components/FileUpload';
 
-export const NewEventForm = ({
-  titre = "",
-  date_debut = "",
-  date_fin = "",
-  heure = "",
-  type_evenement = "",
-  lieu = "",
-  tarifs = "",
-  image = "",
-}) => {
+export const NewEventForm = () => {
   const [form, setForm] = useState({
-    titre,
-    date_debut,
-    date_fin,
-    heure,
-    type_evenement,
-    lieu,
-    tarifs,
-    image,
+    titre: '',
+    description: '',
+    date_debut: '',
+    date_fin: '',  
+    type_evenement: '',
+    lieu: {
+      nom: '',
+      adresse: '',
+      ville: '',
+      capacite: ''
+     
+    },
+    tarifs: [],
+    fichiers: []
   });
 
-  const [imagePreview, setImagePreview] = useState(image || "");
-
-  const {addEvent} = useEventStore();
-
-  useEffect(() => {
-    setForm({ titre, date_debut, date_fin, heure, type_evenement, lieu, tarifs, image });
-    setImagePreview(image || "");
-  }, [titre, date_debut, date_fin, heure, type_evenement, lieu, tarifs, image]);
+  const navigate = useNavigate();
 
   const handleChange = (field) => (e) => {
-    const value = e.target.type === "file" ? e.target.files[0] : e.target.value;
-    setForm((s) => ({ ...s, [field]: value }));
+    setForm((prev) => ({
+      ...prev,
+      [field]: e.target.value
+    }));
+  };
 
-    if (field === "image") {
-      if (e.target.files && e.target.files[0]) {
-        const url = URL.createObjectURL(e.target.files[0]);
-        setImagePreview(url);
-      } else {
-        setImagePreview(e.target.value || "");
-      }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // TODO: Envoyer les données à l'API
+      console.log('Form data:', form);
+      navigate('/admin');
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
   };
 
-  let navigate = useNavigate();
-
-  const submit = (e) => {
-    e.preventDefault();
-    console.log("Submitting form:", typeof form);
-    const ob = {...form}
-
-    ob.image = form.image.name
-    ob.id = Math.floor(Math.random() * 1000000);
-
-    console.log(ob)
-
-    addEvent(ob)
-    navigate("/admin");
-    // if (onSubmit) onSubmit(form);
-    // else console.log("NewEventForm submit:", form);
-  };
-
-const fileInputRef = React.useRef(null);
-
-const setImageFile = (file) => {
-    // revoke previous blob url to avoid memory leak
-    if (imagePreview && imagePreview.startsWith && imagePreview.startsWith("blob:")) {
-        // eslint-disable-next-line no-useless-catch
-        try { URL.revokeObjectURL(imagePreview); } catch (e) { throw e;}
-    }
-    if (file) {
-        const url = URL.createObjectURL(file);
-        setForm((s) => ({ ...s, image: file }));
-        setImagePreview(url);
-    } else {
-        setForm((s) => ({ ...s, image: "" }));
-        setImagePreview("");
-    }
-};
-
-const handleFileButtonClick = () => fileInputRef.current?.click();
-
-const handleFileDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (e.dataTransfer?.files && e.dataTransfer.files[0]) {
-        setImageFile(e.dataTransfer.files[0]);
-    }
-};
-
-const handleClearImage = () => {
-    if (fileInputRef.current) fileInputRef.current.value = null;
-    setImageFile(null);
-};
-
-return (
+  return (
     <div className="container mx-auto p-4 pt-30 bg-white min-h-screen">
-        <div className="bg-white p-6 rounded-lg shadow border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Nouvel événement</h2>
-            <p className="text-gray-500 mb-6">Créez un nouvel événement à venir</p>
-            <form onSubmit={submit} className="space-y-4 bg-white">
-                <div>
-                    <label className="block text-sm font-medium text-gray-700">Titre de l'événement *</label>
-                    <input
-                        type="text"
-                        value={form.titre}
-                        onChange={handleChange("titre")}
-                        className="input input-bordered border-1 border-red-100 w-full mt-1  bg-white"
-                        placeholder="Ex: Séminaire d'entreprise"
-                    />
-                </div>
+      <div className="bg-white p-6 rounded-lg shadow border border-gray-200">
+        <h2 className="text-lg font-semibold text-gray-700 mb-4">Nouvel événement</h2>
+        <p className="text-gray-500 mb-6">Créez un nouvel événement à venir</p>
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Informations de base */}
+          <div className="space-y-4">
+            <div>
+              <label htmlFor="titre" className="block text-sm font-medium text-gray-700">
+                Titre de l'événement
+              </label>
+              <input
+                type="text"
+                id="titre"
+                value={form.titre}
+                onChange={handleChange('titre')}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
 
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                    <div className="w-full md:w-1/2">
-                        <label className="block text-sm font-medium text-gray-700">Type d'événement *</label>
-                        <select
-                            value={form.type_evenement}
-                            onChange={handleChange("type_evenement")}
-                            className="select select-bordered border-1 border-red-100 w-full mt-1 bg-white"
-                        >
-                            <option value="">Sélectionnez</option>
-                            <option value="Séminaire">Séminaire</option>
-                            <option value="Atelier">Atelier</option>
-                            <option value="Conférence">Conférence</option>
-                            <option value="Concert">Concert</option>
-                        </select>
-                    </div>
+            <div>
+              <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+                Description
+              </label>
+              <textarea
+                id="description"
+                value={form.description}
+                onChange={handleChange('description')}
+                rows={3}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              />
+            </div>
+          </div>
 
-                    <div className="w-full md:w-1/2">
-                        <label className="block text-sm font-medium text-gray-700">Date de début *</label>
-                        <input
-                            type="date"
-                            value={form.date_debut}
-                            onChange={handleChange("date_debut")}
-                            className="input input-bordered w-full mt-1 bg-white border-1 border-red-100"
-                        />
-                    </div>
-                </div>
+          {/* Type et dates */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label htmlFor="type_evenement" className="block text-sm font-medium text-gray-700">
+                Type d'événement
+              </label>
+              <select
+                id="type_evenement"
+                value={form.type_evenement}
+                onChange={handleChange('type_evenement')}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                required
+              >
+                <option value="">Sélectionnez un type</option>
+                <option value="conference">Conférence</option>
+                <option value="concert">Concert</option>
+                <option value="spectacle">Spectacle</option>
+                <option value="exposition">Exposition</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
 
-                <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                    <div className="w-full md:w-1/3">
-                        <label className="block text-sm font-medium text-gray-700">Date de fin</label>
-                        <input
-                            type="date"
-                            value={form.date_fin}
-                            onChange={handleChange("date_fin")}
-                            className="input input-bordered w-full mt-1 bg-white border-1 border-red-100"
-                        />
-                    </div>
-                    <div className="w-full md:w-1/3">
-                        <label className="block text-sm font-medium text-gray-700">Heure</label>
-                        <input
-                            type="time"
-                            value={form.heure}
-                            onChange={handleChange("heure")}
-                            className="input input-bordered w-full mt-1 bg-white border-1 border-red-100"
-                        />
-                    </div>
-                    <div className="w-full md:w-1/3">
-                        <label className="block text-sm font-medium text-gray-700">Tarifs</label>
-                        <input
-                            type="text"
-                            value={form.tarifs}
-                            onChange={handleChange("tarifs")}
-                            className="input input-bordered w-full mt-1 bg-white border-1 border-red-100"
-                            placeholder="Ex: Gratuit, 10.000, 5000 (en Ar)"
-                        />
-                    </div>
-                </div>
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="date_debut" className="block text-sm font-medium text-gray-700">
+                  Date de début
+                </label>
+                <input
+                  type="date"
+                  id="date_debut"
+                  value={form.date_debut}
+                  onChange={handleChange('date_debut')}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  required
+                />
+              </div>
 
-                <div>
-                    <label className="block text-sm font-medium text-gray-700">Lieu *</label>
-                    <input
-                        type="text"
-                        value={form.lieu}
-                        onChange={handleChange("lieu")}
-                        className="input input-bordered w-full mt-1 bg-white border-1 border-red-100"
-                        placeholder="Ex: Paris, France"
-                    />
-                </div>
+              
+            </div>
 
-                <div>
-                    <label className="block text-sm font-medium text-gray-700">Description *</label>
-                    <textarea
-                        value={form.description || ""}
-                        onChange={(e) => setForm((s) => ({ ...s, description: e.target.value }))}
-                        className="textarea textarea-bordered w-full mt-1 h-24 bg-white border-1 border-red-100"
-                        placeholder="Décrivez l'événement..."
-                    ></textarea>
-                </div>
+      
+          </div>
 
-                <div>
-                    <label className="block text-sm font-medium">Image (URL ou fichier)</label>
+          {/* Lieu */}
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Lieu de l'événement</h3>
+            <LieuInput 
+              value={form.lieu}
+              onChange={(lieu) => setForm(prev => ({ ...prev, lieu }))}
+            />
+          </div>
 
-                    {/* URL input */}
-                    <input
-                        type="text"
-                        value={typeof form.image === "string" ? form.image : ""}
-                        onChange={handleChange("image")}
-                        className="input input-bordered w-full mt-1 bg-white border-1 border-red-100 mb-2"
-                        placeholder="https://example.com/image.jpg"
-                    />
+          {/* Tarifs */}
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Tarifs</h3>
+            <TarifInput
+              value={form.tarifs}
+              onChange={(tarifs) => setForm(prev => ({ ...prev, tarifs }))}
+            />
+          </div>
 
-                    {/* Ergonomic upload area */}
-                    <div
-                        onDrop={handleFileDrop}
-                        onDragOver={(e) => e.preventDefault()}
-                        className="border-dashed border-2 border-gray-200 rounded p-4 flex flex-col md:flex-row items-center justify-between gap-4 bg-gray-50"
-                    >
-                        <div className="flex items-center gap-4 w-full">
-                            <button
-                                type="button"
-                                onClick={handleFileButtonClick}
-                                className="btn btn-sm bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
-                            >
-                                Choisir un fichier
-                            </button>
+          {/* Image */}
+          <div className="border-t border-gray-200 pt-6">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">Image de l'événement</h3>
+            <FileUpload
+              onFileChange={(filesArray) => setForm(prev => ({ ...prev, fichiers: filesArray || [] }))}
+            />
+          </div>
 
-                            <div className="text-sm text-gray-600 truncate">
-                                {form.image instanceof File
-                                    ? form.image.name
-                                    : typeof form.image === "string" && form.image
-                                    ? form.image.split("/").pop()
-                                    : "Aucun fichier choisi — glisser-déposer une image ici ou cliquez pour sélectionner"}
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                            <button
-                                type="button"
-                                onClick={handleClearImage}
-                                className="btn btn-ghost btn-sm text-red-600"
-                            >
-                                Supprimer
-                            </button>
-                        </div>
-
-                        {/* hidden native file input */}
-                        <input
-                            ref={fileInputRef}
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => {
-                                if (e.target.files && e.target.files[0]) setImageFile(e.target.files[0]);
-                                else handleChange("image")(e);
-                            }}
-                            className="hidden"
-                        />
-                    </div>
-
-                    {/* Preview */}
-                    {imagePreview && (
-                        <img src={imagePreview} alt="preview" className="mt-2 max-h-48 object-contain rounded" />
-                    )}
-                </div>
-
-                <div className="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-4">
-                    <Link to="/admin"><button type="button" className="btn btn-ghost w-full md:w-auto">
-                        Annuler
-                    </button></Link>
-                    <button type="submit" className="btn bg-red-600 text-white w-full md:w-auto">Créer événement</button>
-                </div>
-            </form>
-        </div>
+          {/* Boutons d'action */}
+          <div className="flex justify-end space-x-4 pt-6">
+            <Link
+              to="/admin"
+              className="inline-flex justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Annuler
+            </Link>
+            <button
+              type="submit"
+              className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            >
+              Créer l'événement
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-);
+  );
 };
