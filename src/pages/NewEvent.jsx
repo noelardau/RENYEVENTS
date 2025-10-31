@@ -34,10 +34,24 @@ export const NewEventForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Submitting form:', form);
     
     try {
-      // TODO: Envoyer les données à l'API
-      console.log('Form data:', form);
+      const response = await fetch('https://2527cf11056ca5ab863191300ee420ab.serveo.net/v1/evenements', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Response:', data);
       navigate('/admin');
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -96,8 +110,9 @@ export const NewEventForm = () => {
                 required
               >
                 <option value="">Sélectionnez un type</option>
-                <option value="conference">Conférence</option>
-                <option value="concert">Concert</option>
+                <option value="Conference">Conférence</option>
+                <option value="Concert">Concert</option>
+                <option value="Foire">Concert</option>
                 <option value="spectacle">Spectacle</option>
                 <option value="exposition">Exposition</option>
                 <option value="autre">Autre</option>
@@ -114,6 +129,19 @@ export const NewEventForm = () => {
                   id="date_debut"
                   value={form.date_debut}
                   onChange={handleChange('date_debut')}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="date_fin" className="block text-sm font-medium text-gray-700">
+                  Date de fin
+                </label>
+                <input
+                  type="date"
+                  id="date_debut"
+                  value={form.date_fin}
+                  onChange={handleChange('date_fin')}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   required
                 />
