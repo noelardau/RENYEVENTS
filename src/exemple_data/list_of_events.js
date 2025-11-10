@@ -1,5 +1,5 @@
 
-import viavy_jejo_img from "../assets/images/Foire_Viavy_jejo_19à25mars2025.jpg";
+import viavy_jejo_img from "../assets/images/Foaran_ny_fetin_ny_reny.jpg";
 import mg_mifety_img from "../assets/images/Foire_Malagasy_mifety.jpg";
 
 
@@ -9,7 +9,7 @@ export const list_of_event = [
     title: "Foire Viavy Jejo",
     date: "19-25 Mars 2025",
     image: viavy_jejo_img,
-    link: "#",
+    link: "https://reny-events-back-office.vercel.app/event/ff741457-de4f-4408-b311-0350eaba674c",
   },
   {
     id: 2,
