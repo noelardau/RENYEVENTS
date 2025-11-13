@@ -11,7 +11,7 @@ export const Header = ({ title }) => {
     <header className="w-full shadow-md bg-white fixed top-0 left-0 right-0 z-20">
       <div className="flex items-center justify-between p-4">
         {/* Titre toujours à gauche */}
-        <div className="text-xl font-bold text-red-600">{title}</div>
+        <div className="text-lg text-red-600">{title}</div>
 
         {/* Menu Desktop (masqué en mobile) */}
         <ul className="hidden md:flex gap-6">

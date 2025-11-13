@@ -8,8 +8,8 @@ export const FooterSection = () => {
   const { t } = useTranslation();
 
 return (
-    <footer className="footer bg-indigo-800 text-white p-10">
-    {/* <footer className="footer bg-gray-800 text-white p-10"> */}
+    // <footer className="footer text-white p-10">
+    <footer className="footer bg-gray-800 text-white p-10">
         <div className="flex justify-between w-full flex-col md:flex-row gap-8">
             <div>
                 <span className="footer-title">RENY Events</span>
@@ -48,8 +48,7 @@ return (
                     <a href="#service" className="link link-hover ">{t("services")}</a>
                     <a href="#about" className="link link-hover ">{t("about")}</a>
                     <a href="#contact" className="link link-hover ">{t("contacts")}</a>
-                    <Link to={"/admin"} className="link link-hover ">back office</Link>
-                </div>
+                    </div>
             </div>
         </div>
 

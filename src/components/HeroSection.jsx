@@ -1,4 +1,4 @@
-import hero_image from  "../assets/images/heroSectionImage.jpg" 
+import hero_image from  "../assets/images/newHeroImage.jpeg" 
 import { useTranslation } from 'react-i18next';
 
 export const HeroSection = () => {

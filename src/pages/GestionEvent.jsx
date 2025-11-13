@@ -115,9 +115,12 @@ export const EventManagement = () => {
                         <td className="px-4 py-2">{event.titre}</td>
                         <td className="px-4 py-2">{event.date_debut}</td>
                         <td className="px-4 py-2">{event.lieu}</td>
-                        <td className="px-4 py-2 hidden md:table-cell">{event.image}</td>
+                        <td className="px-4 py-2 hidden md:table-cell">{event.description}</td>
                         <td className="px-4 py-2">
                           <div className="flex items-center gap-2">
+                            <Link to={`editEvent/${event.id}`}>
+                              <button className="btn btn-sm bg-indigo-800 text-white">Gérer reservation</button>
+                            </Link> 
                             <Link to={`editEvent/${event.id}`}>
                               <button className="btn btn-sm bg-blue-600 text-white">Éditer</button>
                             </Link>
