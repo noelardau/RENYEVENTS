@@ -3,6 +3,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useTranslation } from 'react-i18next';
 
 
+
 export const FuturEvent = ({events}) => {
   
   const { t } = useTranslation();
@@ -39,7 +40,7 @@ export const FuturEvent = ({events}) => {
               <p className="text-gray-500">{event.date}</p>
               <div className="mt-4 flex justify-center w-full">
                 <a
-                  href={event.link}
+                  href={`http://localhost:3001/event/${event.id}`}
                   className="btn btn-outline btn-sm text-sm"
                 >
                   Voir détails
